@@ -12,9 +12,9 @@ productsRouter.get(
   celebrate({
     [Segments.PARAMS]: {
       id: Joi.string().uuid().required(),
-    }
+    },
   }),
-  productsController.show
+  productsController.show,
 );
 
 productsRouter.post(
@@ -24,9 +24,9 @@ productsRouter.post(
       name: Joi.string().required(),
       price: Joi.number().precision(2).required(),
       quantity: Joi.number().required(),
-    }
+    },
   }),
-  productsController.create
+  productsController.create,
 );
 
 productsRouter.put(
@@ -39,9 +39,9 @@ productsRouter.put(
     },
     [Segments.PARAMS]: {
       id: Joi.string().uuid().required(),
-    }
+    },
   }),
-  productsController.update
+  productsController.update,
 );
 
 productsRouter.delete(
@@ -49,9 +49,9 @@ productsRouter.delete(
   celebrate({
     [Segments.PARAMS]: {
       id: Joi.string().uuid().required(),
-    }
+    },
   }),
-  productsController.delete
+  productsController.delete,
 );
 
 export default productsRouter;

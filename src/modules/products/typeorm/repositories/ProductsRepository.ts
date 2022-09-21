@@ -1,5 +1,5 @@
-import { EntityRepository, Repository } from "typeorm";
-import Product from "../entities/Product";
+import { EntityRepository, Repository } from 'typeorm';
+import Product from '../entities/Product';
 
 @EntityRepository(Product)
 export class ProductRepository extends Repository<Product> {
@@ -7,9 +7,9 @@ export class ProductRepository extends Repository<Product> {
     const product = this.findOne({
       where: {
         name,
-      }
+      },
     });
 
-    return product
+    return product;
   }
 }

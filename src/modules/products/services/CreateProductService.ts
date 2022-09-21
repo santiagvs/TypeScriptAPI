@@ -1,7 +1,7 @@
-import AppError from "@shared/errors/AppError";
-import { getCustomRepository } from "typeorm";
-import Product from "../typeorm/entities/Product";
-import { ProductRepository } from "../typeorm/repositories/ProductsRepository";
+import AppError from '@shared/errors/AppError';
+import { getCustomRepository } from 'typeorm';
+import Product from '../typeorm/entities/Product';
+import { ProductRepository } from '../typeorm/repositories/ProductsRepository';
 
 interface IRequest {
   name: string;
@@ -22,7 +22,7 @@ class CreateProductService {
       name,
       price,
       quantity,
-    })
+    });
 
     await productsRepository.save(product);
 
@@ -30,4 +30,4 @@ class CreateProductService {
   }
 }
 
-export default CreateProductService
+export default CreateProductService;
